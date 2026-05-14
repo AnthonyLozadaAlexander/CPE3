@@ -29,8 +29,8 @@ public class Persona implements Comparable<Persona> {
 	
 	@Override
 	public String toString() {
-		return "Identificacion: " + cedula + "\n" + 
-	           "Edad: " + edad + "\n";
+		return "Identificacion: " + cedula + " " + "Edad: " + edad; 
+	           
 	}
 
 	// Metodo para comparar por edad, si son iguales se compara por cedula
