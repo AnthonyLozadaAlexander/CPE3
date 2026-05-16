@@ -9,6 +9,7 @@ public class Principal {
 	public static void main(String[] args) {
 		Long start = System.nanoTime();
 		Persona[] personas;
+		Persona atendido;
 		TadPila<Persona> pilaAtendidos = new TadPila<>("atendidos");
 		TadCola<Persona> colaNormal = new TadCola<>("normal");
 		TadCola<Persona> colaTerceraEdad = new TadCola<>("tercera edad");
@@ -28,14 +29,15 @@ public class Principal {
 
 		// se atiende a las personas en la cola por cada 2 que ingresan
 		for (int i = 10; i < 100; i += 2) {
-			Persona atendido;
+			
 			if (personas[i].getEdad() >= 65) {
 				colaTerceraEdad.encolar(personas[i]);
 			} else {
 				colaNormal.encolar(personas[i]);
 
 			}
-
+			
+			// segunda persona
 			if (personas[i + 1].getEdad() >= 65) {
 				colaTerceraEdad.encolar(personas[i + 1]);
 			} else {
